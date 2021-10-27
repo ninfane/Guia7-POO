@@ -23,7 +23,7 @@ T Mayor(const vector<T> &v){
 	return may;
 }
 
-//sobrecarga para Persona
+//sobrecarga para Persona, no se como hacerla como template
 Persona Mayor(Persona p1, Persona p2){
 	if(p1.edad>p2.edad) return p1;
 	else return p2;
