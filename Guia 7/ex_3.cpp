@@ -21,6 +21,10 @@ public:
 
 int main() {
 	
+	VectorDinamico v(10);
+	float p = v[2];
+	cout << p << endl;
+	
 	return 0;
 }
 
