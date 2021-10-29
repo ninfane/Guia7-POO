@@ -7,6 +7,12 @@ struct Persona {
 	int edad;
 };
 
+//hago una sobrecarga de comparacion para poder operar con struct
+//y el template de Mayor
+bool operator>(Persona p1, Persona p2){
+	return p1.edad > p2.edad;
+}
+
 template <typename T>
 T Mayor(T f1, T f2){
 	if (f1>f2) return f1;
@@ -17,18 +23,12 @@ T Mayor(T f1, T f2){
 template <typename T>
 T Mayor(const vector<T> &v){
 	T may = v[0];
-	for(size_t i=0;i<v.size();i++) { 
+	for(size_t i=1;i<v.size();i++) { 
 		if(v[i]>may) may = v[i];
 	}
 	return may;
 }
 
-//sobrecarga para Persona, no se como hacerla como template
-Persona Mayor(Persona p1, Persona p2){
-	if(p1.edad>p2.edad) return p1;
-	else return p2;
-}
-	
 int main() {
 	
 	//aclarando data type
@@ -46,6 +46,9 @@ int main() {
 	vector<int> x = {1,2,3,4,5};
 	int x2 = Mayor(x);
 	cout << "Mayor vector int: " << x2 << endl;
+	
+	char d = Mayor('a','z');
+	cout << "Mayor char: " << d << endl;
 	
 	vector<string> s = {"gato","perro","find","something"};
 	string s2 = Mayor(s);

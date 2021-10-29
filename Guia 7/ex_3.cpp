@@ -13,6 +13,9 @@ public:
 		m_size = size;
 	}
 	//sobrecarga para random, este random es para float
+	//hay que hacerlo con un puntero a funcion 
+	//para saber que tipo de array aleatorio debo generar
+	//paso desde el main la funcion que debe usar mi clase
 	VectorDinamico(int size, int rango){
 		m_rango = rango;
 		m_p = new float[size];
