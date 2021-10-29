@@ -1,9 +1,10 @@
 #include <iostream>
 using namespace std;
 
+template<typename T>
 class VectorDinamico {
 private:
-	float *m_p;
+	T *m_p;
 	int m_size;
 	int m_rango;
 public:
@@ -21,7 +22,7 @@ public:
 		}
 	}
 	//no se como sobrecargar para modificar
-	float operator[] (int i){
+	T operator[] (int i){
 		return *(m_p+i);
 	}
 	~VectorDinamico() { delete []m_p; }
@@ -29,7 +30,7 @@ public:
 
 int main() {
 	
-	VectorDinamico v(10,101);
+	VectorDinamico<float> v(10,101);
 	float p = v[2];
 	cout << p << endl;
 	
